@@ -1,0 +1,36 @@
+<Entities>
+	<ExtensionPackages>
+		<ExtensionPackage name="FTP_Server"
+						  description="Demo Extension for working with FTP Server"
+						  vendor="PTC"
+						  packageVersion="1.0" 
+						  minimumThingWorxVersion="6.0.0">
+			<JarResources>
+				<FileResource type="JAR" file="FTP_Server.jar" description="" />
+				<FileResource type="JAR" file="ftp4j-1.7.2.jar" description="" />
+			</JarResources>
+			</ExtensionPackage>
+	</ExtensionPackages>
+	<ThingPackages>
+		<ThingPackage name="FTP_Server" description="" className="ftp_extension.FTP_Server" aspect.isSystemObject="false" aspect.isCreatable="true">
+		<HandlerDefinitions/>		
+		</ThingPackage>
+	</ThingPackages>
+	<ThingTemplates>
+		<ThingTemplate name="FTPServer" description="" thingPackage="FTP_Server" aspect.isSystemObject="false">
+			<avatar/>
+		</ThingTemplate>
+	</ThingTemplates>
+	
+	<DataShapes>
+		<DataShape name="FTPServerListingShape" description="Datashape holding FTP Server directory listing" aspect.isSystemObject="false">
+			<FieldDefinitions>
+				<FieldDefinition name="Name" description="File or Folder Name" baseType="STRING" aspect.isPrimaryKey="true"/>
+				<FieldDefinition name="Path" description="File or Folder Path" baseType="STRING" aspect.isPrimaryKey="false"/>
+				<FieldDefinition name="Type" description="Can be FILE or FOLDER" baseType="STRING" aspect.isPrimaryKey="false"/>
+				<FieldDefinition name="Size" description="File Size or 0 in case item is FOLDER type" baseType="NUMBER" aspect.isPrimaryKey="false"/>
+			</FieldDefinitions>
+		</DataShape>
+	</DataShapes>
+		
+</Entities>
